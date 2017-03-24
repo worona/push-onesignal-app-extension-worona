@@ -41,7 +41,7 @@
     "private": false,
     "dashboard": {
       "type": "extension",
-      "namespace": "pushOneSignal",
+      "namespace": "pushOnesignal",
       "menu": {
         "app": {
           "niceName": "Push Notifications (OneSignal)",
@@ -52,7 +52,7 @@
     },
     "app": {
       "type": "extension",
-      "namespace": "pushOneSignal",
+      "namespace": "pushOnesignal",
       "listed": true,
       "niceName": "Push Notifications by OneSignal",
       "description": "Edit me!",
