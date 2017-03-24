@@ -1,11 +1,18 @@
 import { fork } from 'redux-saga/effects';
 
-function* logSaga() {
-  console.log('push onesignal saga running!');
+function* initOnesignal() {
+  const appId = yield select(deps.selectorCreators.getSetting('pushOnesignal', 'appId'));
+  window.plugins.OneSignal
+  .startInit(appId)
+  .handleNotificationOpened(function(jsonData) {
+    alert("Notification opened:\n" + JSON.stringify(jsonData));
+    console.log('didOpenRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+  })
+  .endInit();
 }
 
-export default function* testSagas() {
+export default function* pushOnesignalSagas() {
   yield [
-    fork(logSaga),
+    fork(initOnesignal),
   ];
 }
