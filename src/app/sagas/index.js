@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import { fork, select } from 'redux-saga/effects';
+import * as deps from '../deps';
 
 function* initOnesignal() {
   const appId = yield select(deps.selectorCreators.getSetting('pushOnesignal', 'appId'));
@@ -13,5 +14,5 @@ function* initOnesignal() {
 }
 
 export default function* pushOnesignalSagas() {
-  yield [fork(initOnesignal)];
+  if (window.plugins && window.plugins.OneSignal) yield fork(initOnesignal);
 }
