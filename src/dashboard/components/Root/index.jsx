@@ -7,7 +7,7 @@ export default () => {
   const RootContainer = deps.elements.RootContainer;
   return (
     <RootContainer mobilePreview>
-      <h1>General Settings</h1>
+      <h1 className="title">Push Notifications: OneSignal</h1>
       <hr />
       <Form />
     </RootContainer>
