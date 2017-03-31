@@ -4,13 +4,12 @@ import * as deps from '../deps';
 
 function* initOnesignal() {
   const appId = yield select(deps.selectorCreators.getSetting('pushOnesignal', 'appId'));
-  window.plugins.OneSignal
+  if (appId && appId !== '') {
+    window.plugins.OneSignal
     .startInit(appId)
-    .handleNotificationOpened(jsonData => {
-      alert(`Notification opened:\n${JSON.stringify(jsonData)}`);
-      console.log(`didOpenRemoteNotificationCallBack: ${JSON.stringify(jsonData)}`);
-    })
+    .handleNotificationOpened()
     .endInit();
+  }
 }
 
 export default function* pushOnesignalSagas() {
