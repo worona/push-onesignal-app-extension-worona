@@ -42,7 +42,20 @@ const Form = ({ handleSubmit, pristine, siteId, waiting, invalid, anyTouched }) 
         </p>
       </div>
       <div className="message-body">
-        Follow our documentation to in our docs
+        To start sending push notifications you will need to connect your app with OneSignal,
+        a free push notification service for mobile applications.<br /><br />
+        Follow the
+        {' '}
+        <a
+          href="https://docs.worona.org/dashboard/extensions/push-notifications.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          instructions in our documentation
+        </a>
+        {' '}
+        to learn how to do so and get your
+        OneSignal App Id.
       </div>
     </article>
   </form>
